@@ -12,6 +12,7 @@ var db = monk('localhost:27017/simple-webapp');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var apis = require('./routes/apis');
 
 var app = express();
 
@@ -34,6 +35,7 @@ app.use(function(req,res,next){
 });
 app.use('/', routes);
 app.use('/users', users);
+app.use('/apis', apis);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
